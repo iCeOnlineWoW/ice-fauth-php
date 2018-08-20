@@ -4,7 +4,7 @@
 $config = require __DIR__."/SimpleAuthConfig.php";
 
 // instantiate FAuth client
-$fauth = new FAuthClient($config['service'], $config['nodes']);
+$fauth = new FAuthClient($config['service'], $config['secret'], $config['nodes']);
 // retrieve auth URL
 $authUrl = $fauth->getAuthURL($config['callback']);
 

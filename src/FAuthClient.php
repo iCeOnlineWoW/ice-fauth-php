@@ -12,6 +12,8 @@ class FAuthClient
     /** @var string */
     private $service = null;
     /** @var string */
+    private $secret = null;
+    /** @var string */
     private $lang = null;
 
     /** login request endpoint */
@@ -31,9 +33,10 @@ class FAuthClient
      * @param string $lang
      * @throws Exception
      */
-    public function __construct($service, $nodes = [], $lang = null)
+    public function __construct($service, $secret, $nodes = [], $lang = null)
     {
         $this->service = $service;
+        $this->secret = $secret;
         $this->lang = $lang;
         $this->fauthNodes = $nodes;
 
@@ -106,7 +109,8 @@ class FAuthClient
         $result = $this->rest()->request('POST', $url, [
             GuzzleHttp\RequestOptions::JSON => [
                 'token' => $token,
-                'services' => [ $this->service ]
+                'services' => [ $this->service ],
+                'secrets' => [ $this->secret ]
             ]
         ]);
 
