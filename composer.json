@@ -1,0 +1,17 @@
+{
+    "name": "iceonline/ice-fauth-php",
+    "description": "FAuth (Frozen authenticator) PHP implementation for use in FAuth powered websites",
+    "keywords": ["ice", "icewow", "iceonline", "fauth", "frozenauth"],
+    "homepage": "https://ice-wow.eu/",
+    "authors": [
+        {
+            "name": "Gregory",
+            "email": "gregory@ice-wow.eu",
+            "homepage": "http://www.kennny.cz/"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "guzzlehttp/guzzle": "~6.0"
+    }
+}
